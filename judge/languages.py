@@ -189,13 +189,13 @@ _go_lang_config = {
         "max_real_time": 5000,
         "max_memory": 1024 * 1024 * 1024,
         "compile_command": "/usr/bin/go build -o {exe_path} {src_path}",
-        "env": ["GOCACHE=/tmp", "GOPATH=/judger/.go"]
+        "env": ["GOCACHE=/tmp", "GOPATH=/judger/go"]
     },
     "run": {
         "command": "{exe_path}",
         "seccomp_rule": "",
         # 降低内存占用
-        "env": ["GODEBUG=madvdontneed=1", "GOPATH=/judger/.go"] + default_env,
+        "env": ["GODEBUG=madvdontneed=1", "GOPATH=/judger/go"] + default_env,
         "memory_limit_check_only": 1
     }
 }
